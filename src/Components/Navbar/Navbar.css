@@ -1,0 +1,27 @@
+.containerNav {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(97, 24, 91);
+}
+
+.container ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+li {
+  margin: 20px;
+  list-style-type: none;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 15px;
+}
+
+.searchPlace {
+  margin-left: 900px;
+}

@@ -1,23 +1,20 @@
-import logo from "./logo.svg";
+import React, { Component } from "react";
+import "semantic-ui-css/semantic.min.css";
 import "./App.css";
+import Header from "./Components/Header/Header";
+import Navbar from "./Components/Navbar/Navbar";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>FUN-KOMMERCE</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          PROXIM@MENTE
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Navbar />
+        <ItemListContainer />
+      </div>
+    );
+  }
 }
 
 export default App;

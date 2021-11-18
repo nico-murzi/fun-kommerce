@@ -1,0 +1,19 @@
+.counterSection {
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+.counterTitle {
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.counter {
+  font-size: xx-large;
+}
+
+.btn {
+  font-size: xx-large;
+  width: 5%;
+  min-width: 50px;
+}

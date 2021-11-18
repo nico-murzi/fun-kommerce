@@ -4,7 +4,7 @@ import { Icon } from "semantic-ui-react";
 const CartWidget = () => {
   return (
     <div>
-      <a>
+      <a href=".">
         <Icon name="cart" size="large" />
       </a>
     </div>

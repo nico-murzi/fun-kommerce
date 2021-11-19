@@ -1,24 +1,28 @@
-import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import React, { useEffect, useState } from "react";
 import "./ItemListContainer.css";
+import ItemCharacter from "../ItemCharacter/ItemCharacter";
 
 const ItemListContainer = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=200")
+      .then((response) => response.json())
+      .then((json) => setUsers(json));
+  }, []);
+
+  console.log(users);
+
   return (
-    <div className="itemList">
-      <Card>
-        <Image
-          src="https://www.ositoazul.com.ar/database/articulos/fotos/2871/FUNKO%20POP%20DRAGON%20BALL%20Z%20PICCOLO__2.jpg"
-          wrapped
-          ui={false}
-        />
-        <Card.Content>
-          <Card.Header>Piccolo</Card.Header>
-          <Card.Meta>
-            <span className="date">Dragon Ball</span>
-          </Card.Meta>
-          <Card.Description>Ki Inicial: 338</Card.Description>
-        </Card.Content>
-      </Card>
+    <div className="CardContainer">
+      <h1>CardContainer</h1>
+      <div className="CardUser">
+        {users.map((user) => (
+          <div>
+            <ItemCharacter data={user} key={user.id} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

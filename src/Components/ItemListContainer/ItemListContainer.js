@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ItemListContainer.css";
-import ItemCharacter from "../ItemCharacter/ItemCharacter";
+import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=200")
-      .then((response) => response.json())
-      .then((json) => setUsers(json));
-  }, []);
-
-  console.log(users);
-
   return (
     <div className="CardContainer">
-      <h1>CardContainer</h1>
+      <h1>Item List Container</h1>
       <div className="CardUser">
-        {users.map((user) => (
-          <div>
-            <ItemCharacter data={user} key={user.id} />
-          </div>
-        ))}
+        <div className="CardUser2">
+          <ItemList />
+        </div>
       </div>
     </div>
   );

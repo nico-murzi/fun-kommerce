@@ -9,22 +9,22 @@ const Navbar = () => {
       <ul>
         <li>
           <a href=".">
-            <Icon name="home" size="large" /> Inicio{" "}
+            <Icon name="home" size="large" /> Inicio
           </a>
         </li>
         <li>
           <a href=".">
-            <Icon name="photo" size="large" /> Galeria
+            <Icon name="photo" size="large" /> Marvel
           </a>
         </li>
         <li>
           <a href=".">
-            <Icon name="building" size="large" /> Nosotros
+            <Icon name="building" size="large" /> DC
           </a>
         </li>
         <li>
           <a href=".">
-            <Icon name="phone" size="large" /> Contacto
+            <Icon name="phone" size="large" /> Series
           </a>
         </li>
         <li>

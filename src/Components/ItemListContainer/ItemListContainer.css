@@ -1,6 +1,20 @@
-.itemList {
+.CardContainer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: 25px;
+  padding: 25px;
+}
+
+.CardUser {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.CardUser2 {
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }

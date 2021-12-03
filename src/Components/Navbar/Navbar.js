@@ -2,33 +2,36 @@ import React from "react";
 import "./Navbar.css";
 import { Icon } from "semantic-ui-react";
 import CartWidget from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="containerNav">
       <ul>
         <li>
-          <a href=".">
+          <NavLink to="/">
             <Icon name="home" size="large" /> Inicio
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href=".">
+          <NavLink to="/marvel">
             <Icon name="photo" size="large" /> Marvel
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href=".">
+          <NavLink to="/DC">
             <Icon name="building" size="large" /> DC
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href=".">
+          <NavLink to="/series">
             <Icon name="phone" size="large" /> Series
-          </a>
+          </NavLink>
         </li>
         <li>
-          <CartWidget />
+          <NavLink to="/">
+            <CartWidget />
+          </NavLink>
         </li>
       </ul>
     </div>

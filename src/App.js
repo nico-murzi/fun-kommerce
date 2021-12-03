@@ -26,7 +26,6 @@ class App extends Component {
             <Route path='/series' element={<SeriesCategory />} />
             <Route path='/detail/:id' element={<ItemDetail />} />
           </Routes>
-        <ItemListContainer />
       </div>
         </Router>
     );

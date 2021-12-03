@@ -1,9 +1,12 @@
 import React from "react";
+import ItemListContainer from "../Components/ItemListContainer/ItemListContainer";
 
 const Home = () => {
-  return <div>
-    <h1>Home</h1>
-  </div>;
+  return (
+    <div>
+      <ItemListContainer />
+    </div>
+  );
 };
 
 export default Home;

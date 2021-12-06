@@ -6,7 +6,7 @@ const ItemListContainer = () => {
   return (
     <div className="CardContainer">
       <div className="CardUser">
-        <div className="CardUser2">
+        <div>
           <ItemList />
         </div>
       </div>

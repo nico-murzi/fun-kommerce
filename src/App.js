@@ -4,17 +4,18 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import DCCategory from "./Views/DCCategory";
 import SeriesCategory from "./Views/SeriesCategory";
 import Home from "./Views/Home";
 import MarvelCategory from "./Views/MarvelCategory";
 import ItemDetail from "./Components/ItemDetail/ItemDetail";
+import Cart from "./Views/Cart"
+import {ItemsProvider} from './Components/CartContext/CartContext'
 
 class App extends Component {
   render() {
     return (
+      <ItemsProvider>
       <Router>
           <div className="App">
         <Header />
@@ -25,9 +26,11 @@ class App extends Component {
             <Route path='/DC' element={<DCCategory />} />
             <Route path='/series' element={<SeriesCategory />} />
             <Route path='/detail/:id' element={<ItemDetail />} />
+            <Route path='/cart' element={<Cart />} />
           </Routes>
       </div>
         </Router>
+        </ItemsProvider>
     );
   }
 }

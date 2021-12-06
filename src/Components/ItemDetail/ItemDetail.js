@@ -4,6 +4,7 @@ import { Card, Image } from "semantic-ui-react";
 import axios from "axios";
 import { useParams } from "react-router";
 import "../ItemDetail/ItemDetail.css";
+import { Link } from "react-router-dom";
 
 const ItemDetail = () => {
   let IDProduct = useParams();
@@ -11,15 +12,17 @@ const ItemDetail = () => {
   let IDProductDetail = IDProduct.id;
 
   const [productDetail, setProductDetail] = useState([]);
-
-  console.log(productDetail);
-  console.log(productDetail.id);
+  
+  const addItem = () => {
+    alert('Agregaste un item');
+  }
 
   useEffect(() => {
     axios(`https://api.mercadolibre.com/items/${IDProductDetail}`).then((res) =>
       setProductDetail(res.data)
     );
   }, [IDProductDetail]);
+
 
   return (
     <div className="detail">
@@ -30,9 +33,13 @@ const ItemDetail = () => {
           <Card.Meta>
             <span className="date">$ {productDetail.price}</span>
           </Card.Meta>
-          <Card.Description>Stock: {productDetail.quantity}</Card.Description>
+          <Card.Description>Stock: {productDetail.sold_quantity}</Card.Description>
         </Card.Content>
       </Card>
+
+    <Link to='/cart'>
+    <button onClick={addItem}>Agregar al carrito</button>
+    </Link>
     </div>
   );
 };

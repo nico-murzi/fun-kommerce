@@ -29,7 +29,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
+          <NavLink to="/cart">
             <CartWidget />
           </NavLink>
         </li>

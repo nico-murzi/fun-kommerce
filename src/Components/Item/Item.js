@@ -2,13 +2,13 @@ import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
 const Item = ({ data }) => (
-  <Card>
-    <Image src={data.thumbnail} wrapped ui={false} />
+  <Card style={{ height: 400 }}>
+    <Image src={data.thumbnail} wrapped ui={false} style={{ height: 290 }} />
     <Card.Content>
       <Card.Header>{data.title}</Card.Header>
-      <Card.Meta>
+      <Card.Header>
         <span className="date">${data.price}</span>
-      </Card.Meta>
+      </Card.Header>
       <Card.Description>{data.quantity}</Card.Description>
     </Card.Content>
   </Card>

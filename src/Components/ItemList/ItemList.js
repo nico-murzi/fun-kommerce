@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./ItemList.css";
 import Item from "../Item/Item";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
+import {CartContext} from '../CartContext/CartContext'
 
 const ItemList = () => {
-  const [users, setUsers] = useState([]);
+  const [items, setItems] = useContext(CartContext);
 
-  useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?q=funko&limit=4")
-      .then((response) => response.json())
-      .then((json) => setUsers(json.results));
-  }, []);
+  const addItem = () => {
+    alert('Agregaste un item');
+  }
 
   return (
     <div className="CardContainer">
       <div className="CardUser">
-        {users.map((user) => (
-          <div className="CardUser2" key={user.id}>
-            <Link to={`/detail/${user.id}`}>
-              <Item data={user} />
+        {items.map((item) => (
+          <div className="CardUser2" key={item.id}> 
+            <Link to={`/detail/${item.id}`}>
+            <Item data={item} />
             </Link>
+            <ItemCount />
+              <button className='btnCart' onClick={addItem}>Agregar al carrito</button>
           </div>
         ))}
       </div>

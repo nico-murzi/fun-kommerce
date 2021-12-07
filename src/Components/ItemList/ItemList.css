@@ -1,8 +1,29 @@
 .CardUser2 {
-  border: 10px solid black;
+  border: 10px groove black;
   border-radius: 20px;
 }
 
 .btnCart {
   margin-bottom: 20px;
+  margin-top: 20px;
+  width: 15.3vw;
+  color: green;
+  position: relative;
+  font-size: x-large;
+}
+
+.carritoBtn {
+  color: rgb(150, 45, 127);
+  font-size: x-large;
+}
+
+.price {
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
+  padding-bottom: 20px;
+}
+
+.priceContainer {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

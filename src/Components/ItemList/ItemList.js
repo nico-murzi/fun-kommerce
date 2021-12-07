@@ -4,12 +4,13 @@ import Item from "../Item/Item";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import {CartContext} from '../CartContext/CartContext'
+import { Button, Icon } from 'semantic-ui-react'
 
 const ItemList = () => {
   const [items, setItems] = useContext(CartContext);
 
   const addItem = () => {
-    alert('Agregaste un item');
+    alert(`Agregaste un item`);
   }
 
   return (
@@ -20,8 +21,13 @@ const ItemList = () => {
             <Link to={`/detail/${item.id}`}>
             <Item data={item} />
             </Link>
-            <ItemCount />
-              <button className='btnCart' onClick={addItem}>Agregar al carrito</button>
+            <Button animated='vertical' onClick={addItem} className='btnCart'>
+             <Button.Content hidden className='btnCart'>Shop</Button.Content>
+             <Button.Content visible className='carritoBtn'>
+              <Icon name='shop' />
+             </Button.Content>
+            </Button>
+            
           </div>
         ))}
       </div>

@@ -13,6 +13,7 @@ const ItemDetail = () => {
   let IDProductDetail = IDProduct.id;
 
   const [productDetail, setProductDetail] = useState([]);
+  
 
   const addItem = () => {
     alert("Agregaste un item");

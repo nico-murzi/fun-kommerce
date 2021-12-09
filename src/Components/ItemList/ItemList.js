@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "./ItemList.css";
 import Item from "../Item/Item";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
-import {CartContext} from '../CartContext/CartContext'
 import { Button, Icon } from 'semantic-ui-react'
 
 const ItemList = () => {
-  const [items, setItems] = useContext(CartContext);
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.mercadolibre.com/sites/MLA/search?q=funko&limit=12")
+      .then((response) => response.json())
+      .then((json) => setItems(json.results));
+  }, []);
+
+  console.log(items)
+
 
   const addItem = () => {
     alert(`Agregaste un item`);
@@ -23,8 +31,8 @@ const ItemList = () => {
             </Link>
             <Button animated='vertical' onClick={addItem} className='btnCart'>
              <Button.Content hidden className='btnCart'>Shop</Button.Content>
-             <Button.Content visible className='carritoBtn'>
-              <Icon name='shop' />
+             <Button.Content visible className='carritoBtn'>  
+                <Icon name='shop' />
              </Button.Content>
             </Button>
             

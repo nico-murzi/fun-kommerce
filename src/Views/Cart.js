@@ -4,7 +4,7 @@ import { CartContext } from "../Components/CartContext/CartContext";
 import "../ViewsCSS/Cart.css";
 
 const Cart = () => {
-  const { items, removeItem } = useContext(CartContext);
+  const { items, removeItem, clearItems } = useContext(CartContext);
   console.log(items);
 
   return (
@@ -34,6 +34,10 @@ const Cart = () => {
           </div>
         ))}
       </div>
+      <h4 onClick={() => clearItems()} className="clearBtn">
+        {" "}
+        <a href="*">Vaciar Carrito</a>
+      </h4>
     </div>
   );
 };

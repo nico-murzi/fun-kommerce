@@ -1,11 +1,12 @@
 import React from "react";
-import ItemListContainer from "../Components/ItemListContainer/ItemListContainer";
+import ItemList from "../Components/ItemList/ItemList";
 
 const Home = () => {
   return (
-    <div>
-      <ItemListContainer />
-    </div>
+    <>
+      <h1>Home</h1>
+      <ItemList categoryID="MLA5725" />
+    </>
   );
 };
 

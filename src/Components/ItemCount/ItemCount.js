@@ -1,18 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./ItemCount.css";
 
-const ItemCount = () => {
-  const [ItemCounter, setItemCounter] = useState(0);
+const ItemCount = ({ item, stock, initial, addItem }) => {
+  const [qty, setQty] = useState(1);
 
   const counterUp = () => {
-    if (ItemCounter < 6) {
-      setItemCounter(ItemCounter + 1);
+    if (qty < stock) {
+      setQty(qty + 1);
     }
   };
 
   const counterDown = () => {
-    if (ItemCounter > 0) {
-      setItemCounter(ItemCounter - 1);
+    if (qty > 1) {
+      setQty(qty - 1);
     }
   };
 
@@ -22,10 +23,13 @@ const ItemCount = () => {
         <button className="btn" onClick={counterDown}>
           -
         </button>
-        <p className="counter"> {ItemCounter} </p>
+        <p className="counter"> {qty} </p>
         <button className="btn" onClick={counterUp}>
           +
         </button>
+        <Link to="">
+          <button onClick={() => addItem(item, qty)}>Agregar al carrito</button>
+        </Link>
       </div>
     </div>
   );

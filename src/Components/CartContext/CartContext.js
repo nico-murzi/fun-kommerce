@@ -1,21 +1,44 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
+import { StepTitle } from "semantic-ui-react";
 
-// 1 - CREAR EL CONTEXTO
-export const CartContext = createContext();
+export const CartContext = createContext([]);
 
-export const ItemsProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?q=funko&limit=12")
-      .then((response) => response.json())
-      .then((json) => setItems(json.results));
-  }, []);
+  const isInCart = (id) => {
+    const found = items.find((item) => item.id === id);
+    return found;
+  };
 
-  // 3 - RETORNAMOS NUESTRO CONTEXT CON UN .PROVIDER
+  const addItem = (item, qty) => {
+    isInCart(item.id)
+      ? setItems(
+          items.map((prod) => {
+            if (prod.id === item.id) {
+              prod.qty += qty;
+            }
+            return prod;
+          })
+        )
+      : setItems([
+          ...items,
+          {
+            id: item.id,
+            name: item.title,
+            price: item.price,
+            qty: qty,
+            image: item.thumbnail,
+          },
+        ]);
+  };
+
+  const removeItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
   return (
-    <CartContext.Provider value={[items, setItems]}>
-      {/* 4 - PROPS.CHILDREN O BIEN CHILDREN */}
+    <CartContext.Provider value={{ items, addItem, removeItem }}>
       {children}
     </CartContext.Provider>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
+import "./Item.css";
 
 const Item = ({ data }) => (
   <Card style={{ height: 450 }} className="imageCard">

@@ -26,8 +26,12 @@ const ItemList = ({ categoryID }) => {
             <Link to={`/detail/${item.id}`}>
               <Item data={item} />
             </Link>
-            <Button animated="vertical" onClick={addItem} className="btnCart">
-              <Button.Content hidden className="btnCart">
+            <Button animated="vertical" className="btnCart">
+              <Button.Content
+                hidden
+                className="btnCart"
+                onClick={() => addItem(item, 1)}
+              >
                 Shop
               </Button.Content>
               <Button.Content visible className="carritoBtn">

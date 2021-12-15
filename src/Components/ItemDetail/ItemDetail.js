@@ -12,9 +12,7 @@ const ItemDetail = () => {
   let IDProduct = useParams();
 
   let IDProductDetail = IDProduct.id;
-
   const [productDetail, setProductDetail] = useState([]);
-  const [add, setAdd] = useState(false);
 
   const { addItem } = useContext(CartContext);
 
@@ -32,28 +30,21 @@ const ItemDetail = () => {
         </div>
         <Card.Content>
           <Card.Header>{productDetail.title}</Card.Header>
-          <Card.Meta>
-            <span className="date">$ {productDetail.price}</span>
-          </Card.Meta>
+          <Card.Header className="priceContainer">
+            <span className="price">$ {productDetail.price}</span>
+          </Card.Header>
           <Card.Description>
             Stock: {productDetail.sold_quantity}
           </Card.Description>
         </Card.Content>
-
-        {!add ? (
-          <div>
-            <ItemCount
-              item={productDetail}
-              stock={10}
-              initial={1}
-              addItem={addItem}
-            />
-          </div>
-        ) : (
-          <Link to="/cart">
-            <button>Finalizar Compra</button>
-          </Link>
-        )}
+        <div>
+          <ItemCount
+            item={productDetail}
+            stock={10}
+            initial={1}
+            addItem={addItem}
+          />
+        </div>
       </Card>
     </div>
   );

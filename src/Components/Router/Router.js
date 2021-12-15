@@ -5,10 +5,8 @@ import DCCategory from "../../Views/DCCategory";
 import Home from "../../Views/Home";
 import MarvelCategory from "../../Views/MarvelCategory";
 import SeriesCategory from "../../Views/SeriesCategory";
-import { ItemsProvider } from "../CartContext/CartContext";
 import Header from "../Header/Header";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Navbar from "../Navbar/Navbar";
 
 const Router = () => {
   return (
@@ -16,7 +14,6 @@ const Router = () => {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/marvel" element={<MarvelCategory />} />

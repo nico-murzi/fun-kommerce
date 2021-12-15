@@ -19,4 +19,10 @@
 .counterBtn {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+.counterJoystick {
+  display: flex;
+  justify-content: center;
 }

@@ -1,7 +1,8 @@
 .containerNav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgb(97, 24, 91);
+  width: 100%;
 }
 
 .container ul {
@@ -11,7 +12,10 @@
 }
 
 li {
-  margin: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   list-style-type: none;
   display: inline-block;
 }
@@ -22,6 +26,7 @@ a {
   font-size: 15px;
 }
 
-.searchPlace {
-  margin-left: 900px;
+.cartWidget {
+  padding-right: 100px;
+  padding-top: 10px;
 }

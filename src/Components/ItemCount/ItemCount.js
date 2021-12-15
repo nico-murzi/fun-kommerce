@@ -20,14 +20,16 @@ const ItemCount = ({ item, stock, initial, addItem }) => {
   return (
     <div className="counterSection">
       <div className="counterBtn">
-        <button className="btn" onClick={counterDown}>
-          -
-        </button>
-        <p className="counter"> {qty} </p>
-        <button className="btn" onClick={counterUp}>
-          +
-        </button>
-        <Link to="">
+        <div className="counterJoystick">
+          <button className="btn" onClick={counterDown}>
+            -
+          </button>
+          <p className="counter"> {qty} </p>
+          <button className="btn" onClick={counterUp}>
+            +
+          </button>
+        </div>
+        <Link to="/cart">
           <button onClick={() => addItem(item, qty)}>Agregar al carrito</button>
         </Link>
       </div>

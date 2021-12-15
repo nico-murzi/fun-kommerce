@@ -17,3 +17,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.price {
+  font-size: xx-large;
+}
+
+.priceContainer {
+  padding: 20px;
+}

@@ -28,12 +28,12 @@ const Navbar = () => {
             <Icon name="phone" size="large" /> Series
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/cart">
-            <CartWidget />
-          </NavLink>
-        </li>
       </ul>
+      <div className="cartWidget">
+        <NavLink to="/cart">
+          <CartWidget />
+        </NavLink>
+      </div>
     </div>
   );
 };

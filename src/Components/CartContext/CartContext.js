@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { StepTitle } from "semantic-ui-react";
 
 export const CartContext = createContext([]);
 
@@ -41,8 +40,14 @@ export const CartProvider = ({ children }) => {
     setItems([]);
   };
 
+  const totalProductos = () => {
+    return items.reduce((acum, value) => acum + value.qty * value.price, 0);
+  };
+
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem }}>
+    <CartContext.Provider
+      value={{ items, addItem, removeItem, clearItems, totalProductos }}
+    >
       {children}
     </CartContext.Provider>
   );

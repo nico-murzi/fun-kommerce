@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Cart from "../../Views/Cart";
-import DCCategory from "../../Views/DCCategory";
-import Home from "../../Views/Home";
-import MarvelCategory from "../../Views/MarvelCategory";
-import SeriesCategory from "../../Views/SeriesCategory";
-import Header from "../Header/Header";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import Cart from "../Views/Cart";
+import DCCategory from "../Views/DCCategory";
+import Home from "../Views/Home";
+import MarvelCategory from "../Views/MarvelCategory";
+import DragonBallCategory from "../Views/DragonBallCategory";
+import Header from "../Components/Header/Header";
+import ItemDetail from "../Components/ItemDetail/ItemDetail";
 
 const Router = () => {
   return (
@@ -18,7 +18,7 @@ const Router = () => {
             <Route path="/" element={<Home />} />
             <Route path="/marvel" element={<MarvelCategory />} />
             <Route path="/DC" element={<DCCategory />} />
-            <Route path="/series" element={<SeriesCategory />} />
+            <Route path="/series" element={<DragonBallCategory />} />
             <Route path="/detail/:id" element={<ItemDetail />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>

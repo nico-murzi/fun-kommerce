@@ -14,19 +14,13 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/marvel">
-            <Icon name="photo" size="large" /> Marvel
-          </NavLink>
+          <NavLink to="/marvel">Marvel</NavLink>
         </li>
         <li>
-          <NavLink to="/DC">
-            <Icon name="building" size="large" /> DC
-          </NavLink>
+          <NavLink to="/DC">DC</NavLink>
         </li>
         <li>
-          <NavLink to="/series">
-            <Icon name="phone" size="large" /> Series
-          </NavLink>
+          <NavLink to="/series">Dragon Ball</NavLink>
         </li>
       </ul>
       <div className="cartWidget">

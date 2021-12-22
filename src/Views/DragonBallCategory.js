@@ -8,13 +8,16 @@ import Item from "../Components/Item/Item";
 import { db } from "../Firebase/FirebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-const DCCategory = () => {
+const DragonBallCategory = () => {
   const [items, setItems] = useState([]);
   const { addItem } = useContext(CartContext);
 
   useEffect(() => {
     const getFunkoData = async () => {
-      const q = query(collection(db, "funko"), where("universe", "==", "DC"));
+      const q = query(
+        collection(db, "funko"),
+        where("universe", "==", "Dragon Ball")
+      );
       const querySnapshot = await getDocs(q);
       const dataF = [];
       querySnapshot.forEach((doc) => {
@@ -53,4 +56,4 @@ const DCCategory = () => {
   );
 };
 
-export default DCCategory;
+export default DragonBallCategory;

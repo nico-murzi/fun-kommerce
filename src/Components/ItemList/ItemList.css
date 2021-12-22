@@ -17,7 +17,7 @@
   margin-top: 20px;
   width: 15.3vw;
   color: green;
-  position: relative;
+  position: fixed;
   font-size: large;
 }
 
@@ -35,4 +35,9 @@
 .priceContainer {
   padding-bottom: 10px;
   padding-top: 10px;
+}
+
+.shopBtn {
+  position: relative;
+  width: 100%;
 }

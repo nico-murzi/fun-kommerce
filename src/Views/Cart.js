@@ -35,9 +35,9 @@ const Cart = () => {
                     />
                     <Card.Content>
                       <Card.Header className="priceContainer">
-                        <span className="price">${item.price}</span>
+                        <span className="price">{item.name}</span>
                       </Card.Header>
-                      <Card.Header>{item.name}</Card.Header>
+                      <Card.Header>U$D {item.price}</Card.Header>
                       <Card.Description>Cantidad: {item.qty}</Card.Description>
                       <h4
                         onClick={() => removeItem(item.id)}
@@ -45,7 +45,7 @@ const Cart = () => {
                       >
                         <a>Borrar producto</a>
                       </h4>
-                      <h4>Subtotal: ${item.price * item.qty}</h4>
+                      <h4>Subtotal: U$D {item.price * item.qty}</h4>
                     </Card.Content>
                   </Card>
                 </div>
@@ -61,7 +61,7 @@ const Cart = () => {
             </div>
             <div className="total">
               <h4 className="totalPrice">
-                Total <span>${parseFloat(totalProductos()).toFixed(2)}</span>
+                Total <span>U$D {parseFloat(totalProductos()).toFixed(2)}</span>
               </h4>
             </div>
           </div>

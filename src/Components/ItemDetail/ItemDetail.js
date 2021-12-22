@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import { Card, Image } from "semantic-ui-react";
-import axios from "axios";
+import { Image } from "semantic-ui-react";
 import { useParams } from "react-router";
 import "../ItemDetail/ItemDetail.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../CartContext/CartContext";
+
+// Firebase
+import { db } from "../../Firebase/FirebaseConfig";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 const ItemDetail = () => {
   let IDProduct = useParams();
@@ -17,35 +20,44 @@ const ItemDetail = () => {
   const { addItem } = useContext(CartContext);
 
   useEffect(() => {
-    axios(`https://api.mercadolibre.com/items/${IDProductDetail}`).then((res) =>
-      setProductDetail(res.data)
-    );
-  }, [IDProductDetail]);
+    const getFunkoData = async () => {
+      const q = query(
+        collection(db, "funko"),
+        where("id", "==", `${IDProductDetail}`)
+      );
+
+      const querySnapshot = await getDocs(q);
+      const dataF = [];
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        dataF.push({ ...doc.data() });
+      });
+      setProductDetail(dataF[0]);
+    };
+    getFunkoData();
+  }, []);
 
   return (
     <div className="detail">
-      <Card key={productDetail.id} className="cardSize">
-        <div className="imageContainer">
-          <Image src={productDetail.thumbnail} wrapped ui={false} />
+      <div key={productDetail.id} className="card">
+        <div className="imageContainerDetail">
+          <img src={productDetail.img} alt="imagen de producto" />
         </div>
-        <Card.Content>
-          <Card.Header>{productDetail.title}</Card.Header>
-          <Card.Header className="priceContainer">
-            <span className="price">$ {productDetail.price}</span>
-          </Card.Header>
-          <Card.Description>
-            Stock: {productDetail.sold_quantity}
-          </Card.Description>
-        </Card.Content>
-        <div>
+        <div className="detailRight">
+          <h1 className="title">{productDetail.title}</h1>
+          <h2 className="quote">{productDetail.quote}</h2>
+          <h3 className="price">U$D {productDetail.price}</h3>
+        </div>
+        <div className="stockContainer">
           <ItemCount
             item={productDetail}
-            stock={10}
+            stock={productDetail.stock}
             initial={1}
             addItem={addItem}
           />
+          <h4 className="stock">Stock disponible: {productDetail.stock}</h4>
         </div>
-      </Card>
+      </div>
     </div>
   );
 };

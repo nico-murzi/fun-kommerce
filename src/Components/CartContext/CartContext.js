@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
             name: item.title,
             price: item.price,
             qty: qty,
-            image: item.thumbnail,
+            image: item.img,
           },
         ]);
   };
@@ -44,9 +44,20 @@ export const CartProvider = ({ children }) => {
     return items.reduce((acum, value) => acum + value.qty * value.price, 0);
   };
 
+  const scrollTop = () => {
+    window.scroll(0, 0);
+  };
+
   return (
     <CartContext.Provider
-      value={{ items, addItem, removeItem, clearItems, totalProductos }}
+      value={{
+        items,
+        addItem,
+        removeItem,
+        clearItems,
+        totalProductos,
+        scrollTop,
+      }}
     >
       {children}
     </CartContext.Provider>

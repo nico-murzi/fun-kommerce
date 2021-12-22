@@ -1,6 +1,7 @@
-.detail {
-  display: flex;
-  flex-direction: column;
+/* .detail {
+  display: grid;
+  width: 70%;
+  grid-template-columns: 1fr 2fr;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
@@ -24,4 +25,83 @@
 
 .priceContainer {
   padding: 20px;
+}
+
+.imageContainerDetail {
+  max-height: 200px;
+  position: relative;
+} */
+.detail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.card {
+  background-color: rgb(156, 85, 135);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  margin: 1.5rem;
+  overflow: hidden;
+  width: 100rem;
+  height: 40rem;
+}
+
+.imageContainerDetail {
+  padding: 2rem;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 75px;
+}
+
+.imageContainerDetail img {
+  width: 35rem;
+  border-radius: 15px;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.detailRight {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  margin-left: 50px;
+  margin-top: 50px;
+  text-align: justify;
+}
+
+.detailRight h1 {
+  font-size: 5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detailRight h2 {
+}
+
+.detailRight h3 {
+  font-size: 4em;
+  margin-top: 50px;
+}
+
+.stockContainer {
+  padding: 30px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.stockContainer h4 {
+  margin-bottom: 20px;
 }

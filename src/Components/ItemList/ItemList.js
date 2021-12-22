@@ -5,32 +5,42 @@ import { Link } from "react-router-dom";
 import { Button, Icon } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
 
-const ItemList = ({ categoryID }) => {
+// Firebase
+import { db } from "../../Firebase/FirebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+
+const ItemList = () => {
   const [items, setItems] = useState([]);
 
-  const { addItem } = useContext(CartContext);
+  const { addItem, scrollTop } = useContext(CartContext);
 
   useEffect(() => {
-    fetch(
-      `https://api.mercadolibre.com/sites/MLA/search?category=${categoryID}&limit=16`
-    )
-      .then((response) => response.json())
-      .then((json) => setItems(json.results));
+    const getFunkoData = async () => {
+      const q = query(collection(db, "funko"));
+      const querySnapshot = await getDocs(q);
+      const dataF = [];
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        dataF.push({ ...doc.data() });
+      });
+      setItems(dataF);
+    };
+    getFunkoData();
   }, []);
 
   return (
     <div className="CardContainer">
       <div className="CardUser">
-        {items.map((item) => (
-          <div className="CardUser2" key={item.id}>
-            <Link to={`/detail/${item.id}`}>
-              <Item data={item} />
+        {items.map((funko) => (
+          <div className="CardUser2" key={funko.id}>
+            <Link to={`/detail/${funko.id}`} onClick={scrollTop}>
+              <Item data={funko} />
             </Link>
-            <Button animated="vertical" className="btnCart">
+            <Button animated="vertical" className="shopBtn">
               <Button.Content
                 hidden
                 className="btnCart"
-                onClick={() => addItem(item, 1)}
+                onClick={() => addItem(funko, 1)}
               >
                 Shop
               </Button.Content>

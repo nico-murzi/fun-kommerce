@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(160, 101, 214);
+  background-color: rgb(0, 0, 0);
   width: 100%;
   min-height: 7vh;
   flex-direction: column;
@@ -10,6 +10,6 @@
 }
 
 .Header h1 {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   padding-top: 20px;
 }

@@ -17,8 +17,8 @@ const Router = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/marvel" element={<MarvelCategory />} />
-            <Route path="/DC" element={<DCCategory />} />
-            <Route path="/series" element={<DragonBallCategory />} />
+            <Route path="/dc" element={<DCCategory />} />
+            <Route path="/dragonball" element={<DragonBallCategory />} />
             <Route path="/detail/:id" element={<ItemDetail />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>

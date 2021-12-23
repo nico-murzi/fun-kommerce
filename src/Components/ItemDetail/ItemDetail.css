@@ -33,13 +33,18 @@
 } */
 .detail {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   height: 100vh;
+  flex-direction: column;
+}
+
+.detailTitle {
+  padding-top: 30px;
 }
 
 .card {
-  background-color: rgb(156, 85, 135);
+  background-color: rgb(39, 38, 39);
   border-radius: 1rem;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
   display: flex;
@@ -47,6 +52,7 @@
   overflow: hidden;
   width: 100rem;
   height: 40rem;
+  color: aliceblue;
 }
 
 .imageContainerDetail {
@@ -89,6 +95,7 @@
 .detailRight h3 {
   font-size: 4em;
   margin-top: 50px;
+  color: rgb(88, 197, 137);
 }
 
 .stockContainer {

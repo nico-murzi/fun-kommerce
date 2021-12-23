@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Card, Image } from "semantic-ui-react";
+import { Button, Card, Image } from "semantic-ui-react";
 import { CartContext } from "../Components/CartContext/CartContext";
+import FormCart from "../Components/FormCart/FormCart";
 import "../ViewsCSS/Cart.css";
 
 const Cart = () => {
@@ -16,7 +17,7 @@ const Cart = () => {
         <div className="empyCartContainer">
           <h2 className="cartVacioTitle">Tu carrito esta vacio.</h2>
           <Link to="/">
-            <h3 className="goHomeBtn">Quiero comprar algo</h3>
+            <Button className="goHomeBtn">Quiero comprar algo</Button>
           </Link>
         </div>
       ) : (
@@ -45,24 +46,30 @@ const Cart = () => {
                       >
                         <a>Borrar producto</a>
                       </h4>
-                      <h4>Subtotal: U$D {item.price * item.qty}</h4>
+                      <h4 className="subtotal">
+                        Subtotal: U$D {item.price * item.qty}
+                      </h4>
                     </Card.Content>
                   </Card>
                 </div>
               ))}
               <div className="twoBtn">
-                <h2 onClick={() => clearItems()} className="clearBtn">
-                  <Link to="/cart">Vaciar Carrito</Link>
-                </h2>
-                <h2 className="goBuy">
-                  <Link to="/">Continuar compra</Link>
-                </h2>
+                <Link to="/cart">
+                  <Button negative onClick={() => clearItems()}>
+                    Vaciar carrito
+                  </Button>
+                </Link>
+
+                <Link to="/">
+                  <Button positive>Continuar comprando</Button>
+                </Link>
               </div>
             </div>
             <div className="total">
               <h4 className="totalPrice">
                 Total <span>U$D {parseFloat(totalProductos()).toFixed(2)}</span>
               </h4>
+              <FormCart />
             </div>
           </div>
         </div>

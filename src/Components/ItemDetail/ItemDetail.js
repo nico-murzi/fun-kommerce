@@ -39,6 +39,7 @@ const ItemDetail = () => {
 
   return (
     <div className="detail">
+      <h1 className="detailTitle">Detalle de producto</h1>
       <div key={productDetail.id} className="card">
         <div className="imageContainerDetail">
           <img src={productDetail.img} alt="imagen de producto" />

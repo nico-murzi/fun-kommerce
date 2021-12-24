@@ -11,6 +11,7 @@ const initialState = {
   email: "",
   adress: "",
   adressNumber: "",
+  precioTotal: "",
 };
 
 const FormCart = () => {

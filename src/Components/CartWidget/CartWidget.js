@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Icon } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
+import imgCart from "./goku-blanco-cart.png";
+import "./CartWidget.css";
 
 const CartWidget = () => {
   const { items } = useContext(CartContext);
@@ -13,9 +15,9 @@ const CartWidget = () => {
 
   return (
     <div>
-      <div>{itemsInCart}</div>
+      <h3>{itemsInCart}</h3>
       <a href=".">
-        <Icon name="cart" size="large" />
+        <img src={imgCart} alt="" className="gokuCart" />
       </a>
     </div>
   );

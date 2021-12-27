@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/repository-name/static/css/main.33d2e08a.chunk.css",
+    "main.js": "/repository-name/static/js/main.46771075.chunk.js",
+    "main.js.map": "/repository-name/static/js/main.46771075.chunk.js.map",
+    "runtime-main.js": "/repository-name/static/js/runtime-main.e94fffb0.js",
+    "runtime-main.js.map": "/repository-name/static/js/runtime-main.e94fffb0.js.map",
+    "static/css/2.077a0c21.chunk.css": "/repository-name/static/css/2.077a0c21.chunk.css",
+    "static/js/2.64d38cf5.chunk.js": "/repository-name/static/js/2.64d38cf5.chunk.js",
+    "static/js/2.64d38cf5.chunk.js.map": "/repository-name/static/js/2.64d38cf5.chunk.js.map",
+    "index.html": "/repository-name/index.html",
+    "static/css/2.077a0c21.chunk.css.map": "/repository-name/static/css/2.077a0c21.chunk.css.map",
+    "static/css/main.33d2e08a.chunk.css.map": "/repository-name/static/css/main.33d2e08a.chunk.css.map",
+    "static/js/2.64d38cf5.chunk.js.LICENSE.txt": "/repository-name/static/js/2.64d38cf5.chunk.js.LICENSE.txt",
+    "static/media/DC.1cac6c05.png": "/repository-name/static/media/DC.1cac6c05.png",
+    "static/media/Marvel-logo.1153660c.png": "/repository-name/static/media/Marvel-logo.1153660c.png",
+    "static/media/semantic.min.css": "/repository-name/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/dragon.60b8dcb0.png": "/repository-name/static/media/dragon.60b8dcb0.png",
+    "static/media/goku-blanco-cart.03bcde87.png": "/repository-name/static/media/goku-blanco-cart.03bcde87.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e94fffb0.js",
+    "static/css/2.077a0c21.chunk.css",
+    "static/js/2.64d38cf5.chunk.js",
+    "static/css/main.33d2e08a.chunk.css",
+    "static/js/main.46771075.chunk.js"
+  ]
+}

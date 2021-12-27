@@ -7,6 +7,7 @@ import MarvelCategory from "../Views/MarvelCategory";
 import DragonBallCategory from "../Views/DragonBallCategory";
 import Header from "../Components/Header/Header";
 import ItemDetail from "../Components/ItemDetail/ItemDetail";
+import Footer from "../Components/Footer/Footer";
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
             <Route path="/detail/:id" element={<ItemDetail />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
     </>

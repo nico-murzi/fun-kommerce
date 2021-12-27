@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 import "./ItemCount.css";
 
 const ItemCount = ({ item, stock, initial, addItem }) => {
@@ -21,16 +22,18 @@ const ItemCount = ({ item, stock, initial, addItem }) => {
     <div className="counterSection">
       <div className="counterBtn">
         <div className="counterJoystick">
-          <button className="btn" onClick={counterDown}>
+          <Button negative className="btn" onClick={counterDown}>
             -
-          </button>
+          </Button>
           <p className="counter"> {qty} </p>
-          <button className="btn" onClick={counterUp}>
+          <Button positive className="btn" onClick={counterUp}>
             +
-          </button>
+          </Button>
         </div>
         <Link to="/cart">
-          <button onClick={() => addItem(item, qty)}>Agregar al carrito</button>
+          <Button inverted color="green" onClick={() => addItem(item, qty)}>
+            Agregar al carrito
+          </Button>
         </Link>
       </div>
     </div>

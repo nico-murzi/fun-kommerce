@@ -36,12 +36,12 @@ const ItemList = () => {
             <Link to={`/detail/${funko.id}`} onClick={scrollTop}>
               <Item data={funko} />
             </Link>
-            <Button animated="vertical" className="shopBtn">
-              <Button.Content
-                hidden
-                className="btnCart"
-                onClick={() => addItem(funko, 1)}
-              >
+            <Button
+              animated="vertical"
+              className="shopBtn"
+              onClick={() => addItem(funko, 1)}
+            >
+              <Button.Content hidden className="btnCart">
                 Shop
               </Button.Content>
               <Button.Content visible className="carritoBtn">

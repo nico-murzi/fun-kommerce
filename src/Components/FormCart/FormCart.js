@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Button, Form, Segment } from "semantic-ui-react";
+import { Button, Form, Loader, Segment } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
 
 import { collection, addDoc } from "firebase/firestore";
@@ -11,14 +11,13 @@ const initialState = {
   email: "",
   adress: "",
   adressNumber: "",
-  precioTotal: "",
 };
 
 const FormCart = () => {
-  const { totalProductos } = useContext(CartContext);
+  const { totalProductos, items } = useContext(CartContext);
   const [datos, setDatos] = useState(initialState);
   const [purchaseID, setPurchaseID] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [infoSuccess, setInfoSuccess] = useState(false);
 
   const onChangeHandler = (e) => {
@@ -29,15 +28,17 @@ const FormCart = () => {
   const onSubmitHandler = async (e) => {
     setIsLoading(true);
     e.preventDefault();
+    let precioCarrito = totalProductos();
     const docRef = await addDoc(collection(db, "ordenesDeCompra"), {
       datos,
+      precioTotal: precioCarrito,
+      items,
     });
     // console.log('Document written with ID: ', docRef.id);
     setPurchaseID(docRef);
     setIsLoading(false);
     setDatos(initialState);
     setInfoSuccess(true);
-    console.log(totalProductos());
   };
 
   return (
@@ -96,11 +97,20 @@ const FormCart = () => {
             />
           </Form.Group>
           <Form.Checkbox label="Estoy de acuerdo con los términos y condiciones" />
-          <Button type="submit">Finalizar compra</Button>
+          {isLoading ? (
+            <Button type="submit">Finalizar compra</Button>
+          ) : (
+            <Loader inverted>Loading</Loader>
+          )}
+
           {infoSuccess ? (
             <>
               <h1>Su ID de transacción es:</h1>
               <h2>{purchaseID.id}</h2>
+              <h3>
+                Por favor, guarde este código para realizar el seguimiento de su
+                compra
+              </h3>
             </>
           ) : null}
         </Form>

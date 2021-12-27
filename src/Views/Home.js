@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Item from "../Components/Item/Item";
+import React from "react";
 import ItemList from "../Components/ItemList/ItemList";
-
-// Firebase
-import { db } from "../Firebase/FirebaseConfig";
-import { collection, query, getDocs } from "firebase/firestore";
 
 const Home = () => {
   return (

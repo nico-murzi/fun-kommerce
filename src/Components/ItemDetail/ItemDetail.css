@@ -105,10 +105,11 @@
   flex-direction: column;
   align-items: start;
   justify-content: flex-end;
-  margin-left: 50px;
+  margin-left: 200px;
   margin-top: 50px;
 }
 
 .stockContainer h4 {
-  margin-bottom: 20px;
+  margin-top: 0;
+  padding-left: 13px;
 }

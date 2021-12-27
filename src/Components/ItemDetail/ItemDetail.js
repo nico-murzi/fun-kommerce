@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import { Image } from "semantic-ui-react";
 import { useParams } from "react-router";
 import "../ItemDetail/ItemDetail.css";
-import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../CartContext/CartContext";
 

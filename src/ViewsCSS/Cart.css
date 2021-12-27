@@ -8,9 +8,9 @@
 
 .CardUserCart {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 5fr 2fr;
   grid-template-areas: "carrito total";
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -24,6 +24,7 @@
   grid-area: total;
   margin-top: 150px;
   justify-self: start;
+  margin-right: 40px;
 }
 
 .totalPrice {
@@ -101,8 +102,9 @@
 .empyCartContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  height: 74vh;
 }
 
 .goHomeBtn:hover {

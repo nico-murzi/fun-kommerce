@@ -9,15 +9,13 @@ const Cart = () => {
   const { items, removeItem, clearItems, totalProductos } =
     useContext(CartContext);
 
-  console.log(items);
-
   return (
     <div>
       {items.length === 0 ? (
         <div className="empyCartContainer">
-          <h2 className="cartVacioTitle">Tu carrito esta vacio.</h2>
+          <h2 className="cartVacioTitle">Tu carrito está vacío</h2>
           <Link to="/">
-            <Button className="goHomeBtn">Quiero comprar algo</Button>
+            <Button className="goHomeBtn">Ver todos los productos</Button>
           </Link>
         </div>
       ) : (
@@ -44,7 +42,7 @@ const Cart = () => {
                         onClick={() => removeItem(item.id)}
                         className="removeBtn"
                       >
-                        <a>Borrar producto</a>
+                        <a href="#/">Borrar producto</a>
                       </h4>
                       <h4 className="subtotal">
                         Subtotal: U$D {item.price * item.qty}

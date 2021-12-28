@@ -8,6 +8,8 @@ import DragonBallCategory from "../Views/DragonBallCategory";
 import Header from "../Components/Header/Header";
 import ItemDetail from "../Components/ItemDetail/ItemDetail";
 import Footer from "../Components/Footer/Footer";
+import HarryPotterCategory from "../Views/HarryPotterCategory";
+import TheSimpsonsCategory from "../Views/TheSimpsonsCategory";
 
 const Router = () => {
   return (
@@ -20,6 +22,8 @@ const Router = () => {
             <Route path="/marvel" element={<MarvelCategory />} />
             <Route path="/dc" element={<DCCategory />} />
             <Route path="/dragonball" element={<DragonBallCategory />} />
+            <Route path="/the-simpsons" element={<TheSimpsonsCategory />} />
+            <Route path="/harry-potter" element={<HarryPotterCategory />} />
             <Route path="/detail/:id" element={<ItemDetail />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>

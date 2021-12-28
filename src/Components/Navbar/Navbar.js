@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom";
 import img from "./Marvel-logo.png";
 import img2 from "./DC.png";
 import img3 from "./dragon.png";
+import img4 from "./harry-potter-logo.png";
+import img5 from "./simpsons.png";
 
 const Navbar = () => {
   return (
@@ -29,6 +31,16 @@ const Navbar = () => {
         <li>
           <NavLink to="/dragonball">
             <img src={img3} alt="" className="dragon" />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/the-simpsons">
+            <img src={img5} alt="" className="simpsons" />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/harry-potter">
+            <img src={img4} alt="" className="harry" />
           </NavLink>
         </li>
       </ul>

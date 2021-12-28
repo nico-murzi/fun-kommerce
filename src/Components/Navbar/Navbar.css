@@ -41,6 +41,24 @@ a {
   transition: 1s;
 }
 
+.simpsons {
+  width: 150px;
+}
+
+.simpsons:hover {
+  transform: scale(1.2, 1.2);
+  transition: 1.5s;
+}
+
+.harry {
+  width: 180px;
+}
+
+.harry:hover {
+  transform: scale(1.2, 1.2);
+  transition: 1.5s;
+}
+
 .marvel {
   width: 150px;
 }

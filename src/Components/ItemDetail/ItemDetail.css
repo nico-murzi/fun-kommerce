@@ -46,13 +46,14 @@
 .card {
   background-color: rgb(39, 38, 39);
   border-radius: 1rem;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
   display: flex;
   margin: 1.5rem;
   overflow: hidden;
   width: 100rem;
   height: 40rem;
   color: aliceblue;
+  border: 2px black thick;
 }
 
 .imageContainerDetail {

@@ -1,3 +1,4 @@
+//IMPORTS
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import imgCart from "./goku-blanco-cart.png";

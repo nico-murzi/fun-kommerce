@@ -1,3 +1,4 @@
+//IMPORTS
 import React, { useState, useEffect, useContext } from "react";
 import "./ItemList.css";
 import Item from "../Item/Item";
@@ -5,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Button, Icon } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
 
-// Firebase
+//FIREBASE
 import { db } from "../../Firebase/FirebaseConfig";
 import { collection, query, getDocs } from "firebase/firestore";
 

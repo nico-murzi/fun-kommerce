@@ -1,3 +1,4 @@
+//IMPORTS
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -5,7 +6,7 @@ import "../ItemDetail/ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../CartContext/CartContext";
 
-// Firebase
+//FIREBASE
 import { db } from "../../Firebase/FirebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 

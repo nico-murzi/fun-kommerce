@@ -1,7 +1,9 @@
+//IMPORTS
 import React, { useState, useContext } from "react";
 import { Button, Form, Loader, Segment } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
 
+//FIREBASE
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../Firebase/FirebaseConfig";
 
@@ -96,7 +98,7 @@ const FormCart = () => {
               onChange={onChangeHandler}
             />
           </Form.Group>
-          <Form.Checkbox label="Estoy de acuerdo con los términos y condiciones" />
+          <Form.Checkbox label="Me gustaría recibir información en mi email" />
           {isLoading ? (
             <Button type="submit">Finalizar compra</Button>
           ) : (

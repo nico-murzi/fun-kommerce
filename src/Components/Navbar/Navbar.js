@@ -1,3 +1,4 @@
+//IMPORTS
 import React from "react";
 import "./Navbar.css";
 import { Icon } from "semantic-ui-react";

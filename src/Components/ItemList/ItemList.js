@@ -5,10 +5,14 @@ import Item from "../Item/Item";
 import { Link } from "react-router-dom";
 import { Button, Icon } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 //FIREBASE
 import { db } from "../../Firebase/FirebaseConfig";
 import { collection, query, getDocs } from "firebase/firestore";
+
+const MySwal = withReactContent(Swal);
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -28,6 +32,16 @@ const ItemList = () => {
     };
     getFunkoData();
   }, []);
+
+  const alertAdd = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Your work has been saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   return (
     <div className="CardContainer">

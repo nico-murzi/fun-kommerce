@@ -1,5 +1,6 @@
 //IMPORTS
 import React, { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext([]);
 
@@ -31,6 +32,17 @@ export const CartProvider = ({ children }) => {
             image: item.img,
           },
         ]);
+
+    const alertAdd = () => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Producto agregado al carrito",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    };
+    alertAdd();
   };
 
   const removeItem = (id) => {

@@ -15,7 +15,7 @@ const CartWidget = () => {
 
   return (
     <div>
-      <h3>{itemsInCart}</h3>
+      {itemsInCart === 0 ? null : <h3>{itemsInCart}</h3>}
       <a href=".">
         <img src={imgCart} alt="" className="gokuCart" />
       </a>

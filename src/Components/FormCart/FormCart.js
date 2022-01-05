@@ -2,10 +2,14 @@
 import React, { useState, useContext } from "react";
 import { Button, Form, Loader, Segment } from "semantic-ui-react";
 import { CartContext } from "../CartContext/CartContext";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 //FIREBASE
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../Firebase/FirebaseConfig";
+
+const MySwal = withReactContent(Swal);
 
 const initialState = {
   name: "",
@@ -41,6 +45,14 @@ const FormCart = () => {
     setIsLoading(false);
     setDatos(initialState);
     setInfoSuccess(true);
+  };
+
+  const alertSubmit = () => {
+    MySwal.fire(
+      "¡Gracias por tu compra!",
+      "Recordá guardar el ID de la transacción que te daremos a continuación.",
+      "success"
+    );
   };
 
   return (
@@ -105,7 +117,9 @@ const FormCart = () => {
           </Form.Group>
           <Form.Checkbox label="Me gustaría recibir información en mi email" />
           {isLoading ? (
-            <Button type="submit">Finalizar compra</Button>
+            <Button type="submit" onClick={alertSubmit}>
+              Finalizar compra
+            </Button>
           ) : (
             <Loader inverted>Loading</Loader>
           )}

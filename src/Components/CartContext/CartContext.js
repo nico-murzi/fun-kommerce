@@ -47,6 +47,17 @@ export const CartProvider = ({ children }) => {
 
   const removeItem = (id) => {
     setItems(items.filter((item) => item.id !== id));
+
+    const alertDel = () => {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Producto eliminado",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    };
+    alertDel();
   };
 
   const clearItems = () => {

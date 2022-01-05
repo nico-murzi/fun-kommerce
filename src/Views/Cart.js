@@ -5,10 +5,32 @@ import { Button, Card, Image } from "semantic-ui-react";
 import { CartContext } from "../Components/CartContext/CartContext";
 import FormCart from "../Components/FormCart/FormCart";
 import "../ViewsCSS/Cart.css";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const { items, removeItem, clearItems, totalProductos } =
     useContext(CartContext);
+
+  const alertClear = () => {
+    Swal.fire({
+      title: "¿Estás seguro que quieres vaciar tu carrito?",
+      text: "Perderás todo lo agregado hasta ahora.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, vaciar carrito",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "¡Vaciamos tu carrito!",
+          "Es tu oportunidad para agregar nuevos productos.",
+          "success"
+        );
+        clearItems();
+      }
+    });
+  };
 
   return (
     <div>
@@ -54,7 +76,7 @@ const Cart = () => {
               ))}
               <div className="twoBtn">
                 <Link to="/cart">
-                  <Button negative onClick={() => clearItems()}>
+                  <Button negative onClick={alertClear}>
                     Vaciar carrito
                   </Button>
                 </Link>

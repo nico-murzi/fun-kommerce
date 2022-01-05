@@ -117,15 +117,14 @@ const FormCart = () => {
           </Form.Group>
           <Form.Checkbox label="Me gustaría recibir información en mi email" />
           {isLoading ? (
-            <Button type="submit" onClick={alertSubmit}>
-              Finalizar compra
-            </Button>
+            <Button type="submit">Finalizar compra</Button>
           ) : (
             <Loader inverted>Loading</Loader>
           )}
 
           {infoSuccess ? (
             <>
+              {alertSubmit()}
               <h1>Su ID de transacción es:</h1>
               <h2>{purchaseID.id}</h2>
               <h3>

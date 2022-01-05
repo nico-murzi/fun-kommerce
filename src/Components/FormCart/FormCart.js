@@ -56,6 +56,7 @@ const FormCart = () => {
               name="name"
               value={datos.name}
               onChange={onChangeHandler}
+              required
             />
             <Form.Input
               fluid
@@ -65,6 +66,7 @@ const FormCart = () => {
               name="lastName"
               value={datos.lastName}
               onChange={onChangeHandler}
+              required
             />
           </Form.Group>
           <Form.Group>
@@ -76,6 +78,7 @@ const FormCart = () => {
               name="email"
               value={datos.email}
               onChange={onChangeHandler}
+              required
             />
           </Form.Group>
           <Form.Group>
@@ -87,6 +90,7 @@ const FormCart = () => {
               name="adress"
               value={datos.adress}
               onChange={onChangeHandler}
+              required
             />
             <Form.Input
               fluid
@@ -96,6 +100,7 @@ const FormCart = () => {
               name="adressNumber"
               value={datos.adressNumber}
               onChange={onChangeHandler}
+              required
             />
           </Form.Group>
           <Form.Checkbox label="Me gustaría recibir información en mi email" />
